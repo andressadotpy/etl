@@ -21,7 +21,7 @@ if __name__ == '__main__':
     messy_data = maps_api.reverse_geocoding()
     df = DataTransformation(messy_data)
     df = df.run()
-    file = 'df.xlsx'
-    df.to_excel(path+file)
+#    file = 'df.xlsx'
+#    df.to_excel(path+file)
     DB = MySQL()
     DB.sql_processes(df)

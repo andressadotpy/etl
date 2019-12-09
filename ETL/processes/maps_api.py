@@ -45,8 +45,8 @@ class GoogleMapsAPI:
         os.remove(file)
         for i in err:
             print(i)
-        file = os.getcwd() + '/processes/data/locations.xlsx'
-        self.data.to_excel(file) # -> only to visualize the dataframe
+#        file = os.getcwd() + '/processes/data/locations.xlsx'
+#        self.data.to_excel(file) # -> only to visualize the dataframe
         return self.data
 
     def _get_url(self, latlng):

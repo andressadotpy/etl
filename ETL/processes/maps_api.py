@@ -9,7 +9,7 @@ class ReverseGeocodingException(Exception):
 class GoogleMapsAPI:
 
     # google maps api key
-    key = 'AIzaSyAeZV95V3hr_3QIgr756MDJNX2v73oC7cs'
+    key = 'XXXXX' # -> add a key here
     base_url = 'https://maps.googleapis.com/maps/api/geocode/json?'
 
     def __init__(self, df):

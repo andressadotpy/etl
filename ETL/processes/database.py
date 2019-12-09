@@ -26,7 +26,7 @@ class MySQL:
           latitude VARCHAR(40),
           longitude VARCHAR(40),
           rua VARCHAR(100),
-          numero INT(10),
+          numero VARCHAR(10),
           bairro VARCHAR(50),
           cidade VARCHAR(50),
           cep VARCHAR(9),
@@ -85,7 +85,7 @@ class MySQL:
 
     def insert(self, df):
         """Insert pandas dataframe into MySQL database."""
-        df = df.replace(np.nan, 'NULL') # -> SQL don't accept np.nan just NULL
+        df = df.replace(np.nan, 'NULL') # -> SQL don't accept np.nan
         cols = ",".join([str(i) for i in df.columns.tolist()])
         for i, row in df.iterrows():
             sql = "INSERT INTO locations (" + cols + ") VALUES (" + "%s,"*(len(row)-1) + "%s)"

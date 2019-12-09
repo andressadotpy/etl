@@ -10,7 +10,7 @@ class TestDatabase(unittest.TestCase):
             'latitude': '-30.049917',
             'longitude': '-51.201439',
             'rua': 'Rua Monsenhor Veras',
-            'numero': 405,
+            'numero': '405',
             'bairro': 'Santana',
             'cidade': 'Porto Alegre',
             'cep': '90610-010',

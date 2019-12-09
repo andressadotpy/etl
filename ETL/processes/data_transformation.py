@@ -87,8 +87,10 @@ class DataTransformation:
         return output
 
     def _change_tags(self):
-        """Maps the types of tags from Google Maps api to
-        the correct names in portuguese in addr_comp."""
+        """Maps the types of tags from Google Maps API to
+        the correct names in portuguese in addr_comp.
+        Those types that represents not needed information
+        are given the value np.nan."""
 
         types = ['street_number', 'route', 'establishment',
                 'point_of_interest', 'transit_station',

@@ -19,9 +19,11 @@ class GoogleMapsAPI:
 
     def reverse_geocoding(self, file='data.json'):
         """Uses the Google Maps API to find a human readable address
-        for the latitudes/longitudes pairs in self.df.
+        for the latitudes/longitudes pairs in the dataframe.
         Saves information from the API in a JSON file
-        named data.json.
+        named data.json, loads this information inside a pandas DataFrame,
+        makes sure it's the most accurate location for the lat/lng pair
+        and append in a dataframe that saves information for all lat/lng pairs.
         """
         err = []
         for index, row in self.df.iterrows():

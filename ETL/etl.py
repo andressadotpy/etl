@@ -1,8 +1,10 @@
-import os
+"""A module to operate all ETL actions at once."""
 
+import os
 from processes.file_transformation import FileTransformer
 from processes.maps_api import GoogleMapsAPI
 from processes.data_transformation import DataTransformation
+from processes.database import MySQL
 
 if __name__ == '__main__':
     path = os.getcwd() + '/processes/data/'
@@ -21,3 +23,5 @@ if __name__ == '__main__':
     df = df.run()
     file = 'df.xlsx'
     df.to_excel(path+file)
+    DB = MySQL()
+    DB.sql_processes(df)

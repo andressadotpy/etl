@@ -95,11 +95,13 @@ class DataTransformation:
                 'sublocality', 'sublocality_level_1',
                 'administrative_area_level_2',
                 'administrative_area_level_1', 'country',
-                'postal_code', 'political']
+                'postal_code', 'political', 'park', 'locality', 'subway_station'
+                'postal_code_prefix', 'bus_station', 'premise', 'subpremise']
 
         addr_comp =['numero', 'rua', 'rua', 'rua', 'rua',
                     'bairro', 'bairro', 'cidade', 'estado',
-                    'pais', 'cep', np.nan]
+                    'pais', 'cep', np.nan, 'rua', 'cidade', 'rua', np.nan,
+                    'rua', np.nan, np.nan]
         mapped_types = dict(zip(types, addr_comp))
         self.df['types'] = self.df['types'].map(mapped_types)
         return self.df

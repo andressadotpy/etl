@@ -5,6 +5,7 @@ from mysql.connector.errors import Error as err
 from mysql.connector import errorcode
 
 import pandas as pd
+import numpy as np
 
 
 class MySQL:
@@ -24,10 +25,10 @@ class MySQL:
         """CREATE TABLE locations (
           latitude VARCHAR(40),
           longitude VARCHAR(40),
-          rua VARCHAR(30),
-          numero INT,
-          bairro VARCHAR(30),
-          cidade VARCHAR(255),
+          rua VARCHAR(100),
+          numero INT(10),
+          bairro VARCHAR(50),
+          cidade VARCHAR(50),
           cep VARCHAR(9),
           estado VARCHAR(4),
           pais VARCHAR(25))""")
@@ -84,6 +85,7 @@ class MySQL:
 
     def insert(self, df):
         """Insert pandas dataframe into MySQL database."""
+        df = df.replace(np.nan, 'NULL') # -> SQL don't accept np.nan just NULL
         cols = ",".join([str(i) for i in df.columns.tolist()])
         for i, row in df.iterrows():
             sql = "INSERT INTO locations (" + cols + ") VALUES (" + "%s,"*(len(row)-1) + "%s)"

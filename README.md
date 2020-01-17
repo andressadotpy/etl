@@ -87,7 +87,7 @@ $ python etl.py
 ou
 
 ```
-$ cd./ETL
+$ cd ./ETL
 $ python3 etl.py
 ```
 
@@ -101,7 +101,7 @@ $ python -m unittest
 ou
 
 ```
-$ cd./ETL
+$ cd ./ETL
 $ python3 -m unittest
 ```
 

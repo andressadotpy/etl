@@ -1,5 +1,3 @@
-Exercício de seleção - Desenvolvedor Python - ETL 
-  
 *Implementado em Python 3.7.4*
 
 
